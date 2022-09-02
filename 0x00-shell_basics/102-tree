@@ -1,2 +1,2 @@
 #!/bin/bash
-mkidir -p welcome/to/school
+mkidir -p welcome/to/school/school
