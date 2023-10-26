@@ -4,7 +4,7 @@ str="Best School"
 count=1
 while [ "$count" -lt 10 ]
 do
-	if [ "$count" == 9 ];then
+	if [ "$count" -eq 9 ];then
 		echo "Hi"
 	fi
 	echo "$str"
