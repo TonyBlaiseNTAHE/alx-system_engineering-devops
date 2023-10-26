@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
-# Bash script that displays numbers from 1 to 20
+# This script print numbers from 1 to 11
 count=1
 while [ $count -le 20 ]
 do
-
 	case $count in
-		4)
-			echo "bad luck from china"
+		4)echo "$count"
+			echo "bad luck from China"
 			;;
-		9)
-			echo "bad luck from japan"
+		9)echo "$count"
+			echo "back luck from Japan"
 			;;
-		17)
-			echo "bad luck from Italy"
+		17)echo "$count"
+			echo "back luck from Italy"
 			;;
 		*)
 			echo "$count"
 	esac
-	count=$((count+1))
+	((count++))
 done
