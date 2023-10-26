@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script prints best time 10 times but on the nineth time print Hi
+str="Best School"
+count=1
+while [ "$count" -le 9 ]
+do
+	if [ "$count" -eq 9 ];then
+		echo "Hi"
+	fi
+	echo "$str"
+	((count++))
+done
