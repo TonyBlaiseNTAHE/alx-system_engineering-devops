@@ -2,9 +2,9 @@
 # This script prints best time 10 times but on the nineth time print Hi
 str="Best School"
 count=1
-while [ "$count" -le 9 ]
+while [ "$count" -lt 10 ]
 do
-	if [ "$count" -eq 9 ];then
+	if [ "$count" == 9 ];then
 		echo "Hi"
 	fi
 	echo "$str"
