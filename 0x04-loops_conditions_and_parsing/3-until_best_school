@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is diplaying "Best School" 10 times
+str="Best School"
+count=0
+until [ $count -eq 10 ]
+do
+        echo "$str"
+        ((count++))
+done
