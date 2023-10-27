@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 # Bash script that displays:
 # The content of the current directory
-# in a list format
-# where only the part of the name after the first dash is displayed(refer to the example)
-for i in ./;do
-	ls
+# In a list format
+# where only the part of the name after the first dash is displayed
+for file in *;
+do
+	# Check if the file contains a dash
+	if [[ $file == *-* ]];
+	then
+		# Extract the part after the first dash
+		name_after_dash=$(echo "$file" | cut -d '-' -f 2-)
+		echo "$name_after_dash"
+	else
+		# If there is no dash. print the whole filename
+		echo "$file"
+	fi
 done
