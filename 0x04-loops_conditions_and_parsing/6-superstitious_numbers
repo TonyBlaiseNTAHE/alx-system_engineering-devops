@@ -11,10 +11,10 @@ do
 			echo "bad luck from China"
 			;;
 		9)echo "$count"
-			echo "back luck from Japan"
+			echo "bad luck from Japan"
 			;;
 		17)echo "$count"
-			echo "back luck from Italy"
+			echo "bad luck from Italy"
 			;;
 		*)
 			echo "$count"
