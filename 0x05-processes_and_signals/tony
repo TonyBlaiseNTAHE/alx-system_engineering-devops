@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Check if the script has sufficient privileges
+#if [[ $EUID -ne 0 ]]; then
+	#echo "This script must be run as root"
+	#exit 1
+#fi
+
+PID=$$
+echo $PID > /var/run/myscript.pid
+
+trap "echo 'I hate the kill command'" 15
+trap "echo 'Y U no love me?!'" 2
+
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+done

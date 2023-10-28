@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This is a bash script that:
+# creates a file "/var/run/myscript.pid" containing its PID
+# prints "To infinity and beyond" indefinitely
+# prints "I Hate the kill command" when receiving a SIGTERM
+# prints "Y U no love me?" when receiving a SIGNT signal
+# deletes the file "/var/run/myscript.pid" and terminates itself when receiving a SIGOUIT
+# or SIGTERM signal
+
+echo "$$" > /var/run/myscript.pid
+
+function remov_term(){
+	rm /var/run/myscript.pid
+	exit 0
+}
+
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "I hate the kill command" && remov_term' SIGTERM
+	trap 'echo "Y U no Love me?"' 2
+	trap 'remov_term' SIGQUIT
+done
