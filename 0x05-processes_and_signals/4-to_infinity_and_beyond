@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # This Bash script that displays To infinity and beyond indefinitely.
 # In between each iteration of the loop,  I added a sleep 2
-while true
+while true;
 do
-	echo "To infity and beyond"
+	echo "To infity and beyond";
 	sleep 2
 done
