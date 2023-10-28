@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# diplays the meaasge To infinity and beyond 
+# in a indefinite loop before it is killed.
+# it also prints a message I am invincible when receving a SIGTERM signal
+
+# function to handle signalterm
+function sigterm_handler {
+	echo "I'm invincible!!!"
+}
+
+#Set the trp for SIGTERM
+trap 'sigterm_handler' SIGTERM
+
+while true;
+do
+	echo "To infinity and beyond";
+	sleep 2
+done
