@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# prints the message 
+# diplays the meaasge To infinity and beyond 
+# in a indefinite loop before it is killed. 
 
 while true;
 do
