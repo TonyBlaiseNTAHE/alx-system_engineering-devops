@@ -4,7 +4,7 @@
 # it also prints a message I am invincible when receving a SIGTERM signal
 
 #Set the trp for SIGTERM
-trap "echo 'I'm invincible!!!'" 15
+trap "echo 'I am invincible!!!'" 15
 
 while true;
 do
