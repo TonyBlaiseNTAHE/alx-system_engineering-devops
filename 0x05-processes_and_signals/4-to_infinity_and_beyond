@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# prints the message infinity and beyon for
-# eternity unless it is killed, not so ethernal after all :)
+# prints the message 
 
 while true;
 do
