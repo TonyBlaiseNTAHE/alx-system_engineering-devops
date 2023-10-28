@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# this is a bash script that stops 4-to_infinity_and_beyond process.
+
+# Get the id of `4-to_infinity_and_beyond` process
+id=$(pgrep "bash ./7-highlander" -f)
+
+#check if id if not empty
+if [ -n "$id" ];then
+	kill -9 "$id"
+fi
+
