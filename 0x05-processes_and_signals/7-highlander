@@ -3,13 +3,8 @@
 # in a indefinite loop before it is killed.
 # it also prints a message I am invincible when receving a SIGTERM signal
 
-# function to handle signalterm
-function sigterm_handler {
-	echo "I'm invincible!!!"
-}
-
 #Set the trp for SIGTERM
-trap 'sigterm_handler' SIGTERM
+trap "echo 'I'm invincible'" 15
 
 while true;
 do
