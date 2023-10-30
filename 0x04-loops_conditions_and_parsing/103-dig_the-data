@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that groups visitors by  IP along with the HTTP status code
+# and display this data.
+awk '{print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
