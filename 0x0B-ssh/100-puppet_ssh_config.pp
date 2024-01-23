@@ -1,11 +1,13 @@
-#!/usr/bin/env bash
-# client configuration file
+# configure client configration file
 
-file { '/etc/ssh/ssh_config':
-  ensure => file,
+$file_path = '/etc/ssh/ssh_config'
+
+file { $file_path:
+  ensure  => 'present',
   content => "
-         # ssh client configuration
-         PasswordAuthentication no
-         IndentityFile ~/.ssh/school
-         "
+	# SSH Client Configuration
+	host*
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
+	"
 }
