@@ -1,28 +1,8 @@
 #!/usr/bin/env bash
 # A script that installs a web server on my server
-
-# Installing Nginx web server
-sudo apt-get update -y && sudo apt-get install nginx -y
-
-# Installing a firewall using UFW and enabling it
-# sudo apt-get install ufw && sudo ufw enable
-
-# Opening port 80 and 443
-sudo ufw allow 'Nginx HTTP'
-
-# Stopping and starting the service
-sudo service nginx start
-
-# Giving the user ownership to write files for easy editing
-sudo chown -R "$USER":"$USER" /var/www/html
-sudo chmod -R 755 /var/www
-
-# Backup default index
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.backup
-
+apt-get update -y
+apt-get install nginx -y
 # Creating a new index with custom content
-echo "Hello World" | sudo dd status=none of=/var/www/html/index.nginx-debian.html
-
+echo "Hello World" > /var/www/html/index.nginx-debian.html
 # Restarting Nginx with the new index
-sudo service nginx restart
-
+service nginx restart
