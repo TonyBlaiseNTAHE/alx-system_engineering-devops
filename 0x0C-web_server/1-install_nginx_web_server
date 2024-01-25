@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-# A script that installs a web server on my server
-apt-get update -y
-apt-get install nginx -y
-# Creating a new index with custom content
-echo "Hello World" > /var/www/html/index.nginx-debian.html
-# Restarting Nginx with the new index
-service nginx restart
+# Script that installs Nginx server
+apt-get -y update
+apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+service nginx start
