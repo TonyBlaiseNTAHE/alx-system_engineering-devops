@@ -5,7 +5,7 @@
 sudo apt update
 
 # installing haproxy
-sudo apt install haproxy
+sudo apt-get  install haproxy -y
 sudo bash -c 'echo "backend web_servers" >> /etc/haproxy/haproxy.cfg'
 sudo bash -c 'echo "    balance roundrobin" >> /etc/haproxy/haproxy.cfg'
 sudo bash -c 'echo "    server web-01 100.25.103.208:80 check" >> /etc/haproxy/haproxy.cfg'
