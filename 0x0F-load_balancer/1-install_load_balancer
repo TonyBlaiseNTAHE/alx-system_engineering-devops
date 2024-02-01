@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# script that configure Haproxy so that it send traffic to web-01 and web-02 servers.
+
+# updating the system
+sudo apt update
+
+# installing haproxy
+sudo apt install haproxy
+sudo bash -c 'echo "backend web_servers" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "    balance roundrobin" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "    server web-01 100.25.103.208:80 check" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "    server web-02 100.26.157.231:80 check" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "frontend http_front" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "    bind *:80" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "    default_backend web_servers" >> /etc/haproxy/haproxy.cfg'
+sudo bash -c 'echo "ENABLED=1" >> /etc/default/haproxy'
+
+# check configuration
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+# start haproxy
+sudo service haproxy start
+sudo service haproxy stop
+sudo service haproxy restart
