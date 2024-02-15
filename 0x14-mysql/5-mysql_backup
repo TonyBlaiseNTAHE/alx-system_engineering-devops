@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# creating a mysql dump file and compress it into a archive file
+current_date=$(date +"%d-%m-%Y")
+mysqldump -uroot -p "$1" > backup.sql
+tar -czvf backup.tar.gz back_up.sql
+mv backup.tar.gz "$current_date.tar.gz"
