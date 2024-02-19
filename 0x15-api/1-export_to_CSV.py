@@ -4,10 +4,10 @@
 a script that take an id of an user and return to list of tasks
 that he/she already done or not yet done using REST API
 """
-
+import csv
 import requests
 import sys
-import csv
+
 
 
 if __name__ == '__main__':
