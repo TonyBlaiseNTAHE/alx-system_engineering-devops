@@ -19,12 +19,12 @@ if __name__ == "__main__":
     tasks = res.json()
     l_task = []
     for task in tasks:
-        t = {"task": task.get('title'),
-             "completed": task.get('completed'),
-             "useername": name}
-        l_task.append(t)
+        dict_task = {"task": task.get('title'),
+                     "completed": task.get('completed'),
+                     "username": name}
+        l_task.append(dict_task)
 
-    d = {str(userid): l_task}
+    d_task = {str(userid): l_task}
     filename = '{}.json'.format(userid)
-    with open(filename, mode='w') as file:
-        json.dump(d, file)
+    with open(filename, mode='w') as f:
+        json.dump(d_task, f)
