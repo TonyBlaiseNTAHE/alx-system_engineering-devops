@@ -7,8 +7,8 @@ import requests
 
 
 def top_ten(subreddit):
-    """ returns the number of subscribes from reddit api"""
-    if subreddit is None or type(subreddit):
+    """Prints the titles of top 10 hot posts from the specified subreddit."""
+    if subreddit is None:
         return 0
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     header = {
@@ -18,7 +18,6 @@ def top_ten(subreddit):
     response = requests.get(url=url, headers=header, params=params,
                             allow_redirects=False)
     if response.status_code == 404:
-        print("None")
         return
     data = response.json().get("data")
     for title in data.get("children"):
