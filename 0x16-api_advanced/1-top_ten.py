@@ -10,7 +10,7 @@ def top_ten(subreddit):
     """ returns the number of subscribes from reddit api"""
     if subreddit is None or type(subreddit):
         return 0
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     header = {
         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
     }
