@@ -8,12 +8,15 @@ import requests
 
 def top_ten(subreddit):
     """ returns the number of subscribes from reddit api"""
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     header = {
         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
     }
-    response = requests.get(url=url, headers=header, allow_redirects=False)
+    params = {"limit": 10}
+    response = requests.get(url=url, headers=header, params=params,
+                            allow_redirects=False)
     if response.status_code == 404:
         return 0
     data = response.json().get("data")
-    return data.get("titles")
+    for title in data.get("children"):
+        print(title.get('data').get('title'))
