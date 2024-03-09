@@ -10,7 +10,7 @@ def number_of_subscribers(subreddit):
     """ returns the number of subscribes from reddit api"""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     header = {
-        "User-Agent': '0x16-api_advanced:project:v1.0.0 (by /u/firdaus_cartoon_jr"
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
     }
     response = requests.get(url=url, headers=header, allow_redirects=False)
     if response.status_code == 404:
